@@ -4,20 +4,13 @@
 using namespace std;
 
 int main(){
-  int speed;
+  string name = "Mark", name2 = "Mary";
+  
 
-  cout << "enter speed: \n";
-  cin >> speed;
+  name == name2 ? cout << "yeaaaah boiiii \n" : cout << "-_- \n";
 
-  if (speed >= 0 && speed <= 200)
-  {
-    cout << "Number is valid \n";
-  }
-  else
-  {
-    cout << "Number is not valid \n";
 
-  }
+
 
 
   

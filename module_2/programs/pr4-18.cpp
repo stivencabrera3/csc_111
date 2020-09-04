@@ -20,26 +20,37 @@ int main()
       << "Enter your choice: \n";
   cin >> choice;
 
-  cout << "Enter how many months: ";
-  cin >> months;
+  
 
   cout << setprecision(2) << fixed;
 
   if (choice == 1)
   {
+
+    cout << "Enter how many months: ";
+    cin >> months;
+
     charge = months * ADULT;
-    cout << "The total charges are: " << charge << endl;
+    cout << "The total charges are: $" << charge << endl;
   }
 
   else if (choice == 2)
   {
+
+    cout << "Enter how many months: ";
+    cin >> months;
+
     charge = months * CHILD;
-    cout << "The total charges are: " << charge << endl;
+    cout << "The total charges are: $" << charge << endl;
   }
   else if (choice == 3)
   {
+
+    cout << "Enter how many months: ";
+    cin >> months;
+    
     charge = months * SENIOR;
-    cout << "The total charges are: " << charge << endl;
+    cout << "The total charges are: $" << charge << endl;
   }
 
   else if (choice == 4)
