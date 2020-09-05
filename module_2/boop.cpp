@@ -4,11 +4,11 @@
 using namespace std;
 
 int main(){
-  string name = "Mark", name2 = "Mary";
+  double num,num2;
+
+  cin >> num >> num2;
   
-
-  name == name2 ? cout << "yeaaaah boiiii \n" : cout << "-_- \n";
-
+  (num>num2) ? cout << num << endl : cout <<  num2 << endl;
 
 
 
