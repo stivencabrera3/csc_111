@@ -1,18 +1,24 @@
-#include <iostream>
+#include <iostream> 
+#include <fstream>
 using namespace std;
 
 int main()
 {
+  int num,num2,count=0,total=0;
+  ifstream in_file;
+  in_file.open("numbers.txt");
 
-  int max;
+  // in_file >> num;
 
-  cout << "how many times: ";
-  cin >> max;
-
-
-  for (size_t i = 0; i < max; i++)
+  while (in_file >> num2)
   {
-    cout << "lol" << endl;
+    if (num2<num)
+    {
+      num = num2;
+    }
+    
   }
-  
+  cout << num << endl;
 }
+  
+
