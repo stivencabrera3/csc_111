@@ -1,18 +1,16 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
-void display_name(string input) 
-{
-    cout << input << endl;
-}
+
+
 
 int main() 
 {
-    string name;
+    string name = "geek";
 
-    cout << "enter name: \n";
-    getline(cin, name);
+    cout << name.substr(1,3) << endl;
 
-    display_name(name);
+
 }
