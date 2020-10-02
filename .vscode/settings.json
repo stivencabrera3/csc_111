@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "*.html": "html",
     "ostream": "cpp",
     "iostream": "cpp",
     "iomanip": "cpp",
@@ -59,7 +60,11 @@
     "typeinfo": "cpp",
     "unordered_map": "cpp",
     "utility": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "bit": "cpp",
+    "deque": "cpp",
+    "fstream": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp.default.cppStandard": "c++20"
 }
