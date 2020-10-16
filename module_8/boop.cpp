@@ -6,14 +6,19 @@ int main()
     double sum = 0;
     double arr_size = 0;
     double average;
-    int numbers[] = {1,2,3,4};
-    for (auto i : numbers)
+    int max,min;
+    int numbers[] = {2,1,3,4};
+    for (size_t i = 0; i < 4; i++)
     {
-        sum += i;
-        arr_size++;
+        if (numbers[i] > max)
+        {
+            max = numbers[i];
+        }
     }
-    average = sum/arr_size;
+    
+    
+    cout << max << endl;
+    // cout << min << endl;
 
-    cout << average << endl;
     
 }
