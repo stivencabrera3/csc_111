@@ -10,6 +10,7 @@ int main()
     for (size_t i = 1; i <= 5; i++)
     {
         nums.push_back(i); // pushing elements to back of vector
+        //pop.back() -  removes last element of vector or string
     }
 
     //printing elements of vector
