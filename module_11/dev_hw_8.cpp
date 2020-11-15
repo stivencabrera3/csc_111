@@ -76,10 +76,11 @@ void show_account_info(CustomerAccount a)
 }
 
 void change_account_info(vector <CustomerAccount>&a)
-{
+{  
+    //printing every name so user choices which account to edit
     for (size_t i = 0; i < a.size(); i++)
     {
-        cout << i + 1 << ": " << a[i].customer_name << endl;
+        cout << i + 1 << ". " << a[i].customer_name << endl;
     }
     
 }
@@ -124,32 +125,35 @@ int main()
 
     while(running) 
     {
+        //displaying menu
         cout << "1. Enter new account information" << endl
         << "2. Change account information" << endl
         << "3. Display all account information" << endl
         << "4. Exit" << endl;
 
+        //getting menu choice
         cout << "Enter choice: ";
         cin >> choice;
 
+        //choice validation
         while(choice <= 0 || choice > 4)
         {
             cout << "Invalid input. Try again: ";
             cin >> choice;
         }
 
-
+        //menu choices
         switch(choice)
         {
             case 1:
                 get_new_account(accounts);
-                show_account_info(accounts[0]);
-                running = run_program;
+                // show_account_info(accounts[0]);
+                running = run_program();
                 break;
 
             case 2:
                 change_account_info(accounts);
-                running = run_program;
+                running = run_program();
                 break;
             
             case 3:
