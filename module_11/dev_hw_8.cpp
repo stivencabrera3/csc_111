@@ -4,13 +4,15 @@
 
 using namespace std;
 
+// Stiven Cabrera - CSC111
+
 struct CustomerAccount
 {
     string customer_name;
     string customer_address;
     string city;
     string state;
-    int zipcode;
+    string zipcode;
     string telephone;
     double account_balance;
     string last_payment_date;
@@ -21,12 +23,11 @@ void get_new_account(vector <CustomerAccount> &a)
 {
     CustomerAccount new_account;
 
+    cin.ignore();
     cout << "Enter account name: ";
-    cin >> new_account.customer_name;
-
+    getline(cin, new_account.customer_name);
 
     cout << "Enter " << new_account.customer_name << "'s address: ";
-    cin.ignore();
     getline(cin, new_account.customer_address);
 
     cout << "City: ";
@@ -77,12 +78,93 @@ void show_account_info(CustomerAccount a)
 
 void change_account_info(vector <CustomerAccount>&a)
 {  
+    int choice, choice_2;
     //printing every name so user choices which account to edit
     for (size_t i = 0; i < a.size(); i++)
     {
         cout << i + 1 << ". " << a[i].customer_name << endl;
     }
-    
+
+    cout << "Enter a number to select corresponding account: ";
+    cin >> choice;
+
+    while(choice < 1 || choice > a.size())
+    {
+        cout << "Invalid input. Try again: " << endl;
+        cin >> choice;
+    }
+
+    show_account_info(a[choice - 1]);
+
+    cout << endl;
+    cout << "Enter number to change corresponding piece of account information: ";
+    cin >> choice_2;
+
+    while (choice_2 < 1 || choice_2 > 8)
+    {
+        cout << "Invalid input. Try again: " << endl;
+        cin >> choice_2;
+    }
+
+    switch (choice_2)
+    {
+        case 1:
+            cout << "Old customer name: " << a[choice - 1].customer_name << endl;
+            cout << "Enter new customer name: ";
+            cin >> a[choice - 1].customer_name;
+            cout << "Customer name has been changed to " << a[choice - 1].customer_name << endl;
+            break;
+
+        case 2:
+            cout << "Old customer address: " << a[choice - 1].customer_address << endl;
+            cout << "Enter new customer address: ";
+            cin >> a[choice - 1].customer_address;
+            cout << "Customer address has been changed to " << a[choice - 1].customer_address << endl;
+            
+
+        case 3:
+            cout << "Old city: " << a[choice - 1].city << endl;
+            cout << "Enter new city: ";
+            cin >> a[choice - 1].city;
+            cout << "city has been changed to " << a[choice - 1].city << endl;
+            
+
+        case 4:
+            cout << "Old state: " << a[choice - 1].state << endl;
+            cout << "Enter new state: ";
+            cin >> a[choice - 1].state;
+            cout << "state has been changed to " << a[choice - 1].state << endl;
+            
+
+        case 5:
+            cout << "Old zipcode: " << a[choice - 1].zipcode << endl;
+            cout << "Enter new zipcode: ";
+            cin >> a[choice - 1].zipcode;
+            cout << "zipcode has been changed to " << a[choice - 1].zipcode << endl;
+            break;
+
+        case 6:
+            cout << "Old telephone: " << a[choice - 1].telephone << endl;
+            cout << "Enter new telephone: ";
+            cin >> a[choice - 1].telephone;
+            cout << "Telephone has been changed to " << a[choice - 1].telephone << endl;
+            break;
+
+        case 7:
+            cout << "Old account balance: $" << a[choice - 1].account_balance << endl;
+            cout << "Enter new account balance: ";
+            cin >> a[choice - 1].account_balance;
+            cout << "Account balance has been updated to $" << a[choice - 1].account_balance << endl;
+            break;
+
+        case 8:
+            cout << "Last payment date: " << a[choice - 1].last_payment_date << endl;
+            cout << "New payment date: ";
+            cin >> a[choice - 1].last_payment_date;
+            cout << "Payment date is now: " << a[choice - 1].last_payment_date << endl;
+            break;        
+    }
+
 }
 
 bool run_program()
@@ -94,7 +176,7 @@ bool run_program()
     
     cin >> choice;
 
-    while(choice != 0 || choice != 1)
+    while(choice < 0 || choice > 1)
     {
         cout << "Invalid input." << endl
             << "Enter 1 to get back to main menu or 0 to exit program: ";
@@ -119,7 +201,7 @@ bool run_program()
 
 int main()
 {
-    int choice;
+    int choice, account_choice;
     bool running = true;
     vector <CustomerAccount> accounts;
 
@@ -157,9 +239,37 @@ int main()
                 break;
             
             case 3:
+
+                if(accounts.size() <= 0)
+                {
+                    cout << "No accounts to display." << endl;
+                    
+                }
+                else
+                {
+                    for (size_t i = 0; i < accounts.size(); i++)
+                    {
+                        cout << i + 1 << ". " << accounts[i].customer_name << endl;
+                    }
+
+                    cout << "Enter a number to select corresponding account: ";
+                    cin >> account_choice;
+
+                    while(account_choice < 1 || account_choice > accounts.size())
+                    {
+                        cout << "Invalid input. Try again: " << endl;
+                        cin >> account_choice;
+                    }
+
+                    show_account_info(accounts[account_choice - 1]);
+                    
+                }
+
+                running = run_program();
                 break;
             
             case 4:
+                running = false;
                 break;
 
         }
