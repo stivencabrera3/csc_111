@@ -6,7 +6,7 @@ class Rectangle
         double width;
         double length;
     public:
-        Rectangle(double w, double l)
+        Rectangle(double w=0, double l=0)
         {
             width = w;
             length = l;
